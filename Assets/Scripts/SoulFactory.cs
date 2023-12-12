@@ -6,6 +6,15 @@ public class SoulFactory : Factory
 {
     [SerializeField]
     private Soul soulPrefab;
+    [SerializeField]
+    private int soulPowerMin;
+    [SerializeField]
+    private int soulPowerMax;
+    [SerializeField]
+    private int soulHealthMin;
+    [SerializeField]
+    private int soulHealthMax;
+
     private Dictionary<string, bool> _maleSoulNameDict; //bool is true if name is taken
     private Dictionary<string, bool> _femaleSoulNameDict; //bool is true if name is taken
 
@@ -36,6 +45,10 @@ public class SoulFactory : Factory
         soul.Gender = gender;
         soul.SoulName = name;
         soul.gameObject.name = name;
+
+        //random number using geometric distribution
+        soul.Power = Mathf.Clamp(Util.SampleGeometricDistribution(0.25f) + soulPowerMin,soulPowerMin,soulPowerMax);
+        soul.Health = Mathf.Clamp(Util.SampleGeometricDistribution(0.1f) + soulHealthMin,soulHealthMin,soulHealthMax);
         return soul;
     }
 
@@ -62,5 +75,7 @@ public class SoulFactory : Factory
         dict[name] = true;
         return name;
     }
+
+    
 
 }

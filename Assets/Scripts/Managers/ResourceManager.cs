@@ -39,29 +39,58 @@ public class ResourceManager : Singleton<ResourceManager>
         _rebellionQty += rebellionQty;
     }
 
-    public void RemoveWood(int woodQty)
+    public bool RemoveWood(int woodQty)
     {
+        if (_woodQty < woodQty) {
+            return false;
+
+        }
         _woodQty -= woodQty;
+        return true;
     }
 
-    public void RemoveRock(int rockQty)
+    public bool RemoveRock(int rockQty)
     {
+        if (_rockQty < rockQty)
+        {
+            return false;
+
+        }
         _rockQty -= rockQty;
+        return true;
     }
 
-    public void RemoveCrystal(int crystalQty)
+    public bool RemoveCrystal(int crystalQty)
     {
+        if (_crystalQty < crystalQty)
+        {
+            return false;
+
+        }
         _crystalQty -= crystalQty;
+        return true;
     }
 
-    public void RemoveWater(int waterQty)
+    public bool RemoveWater(int waterQty)
     {
+        if (_waterQty < waterQty)
+        {
+            return false;
+
+        }
         _waterQty -= waterQty;
+        return true;
     }
 
-    public void RemoveRebellion(int rebellionQty)
+    public bool RemoveRebellion(int rebellionQty)
     {
+        if (_rebellionQty < rebellionQty)
+        {
+            return false;
+
+        }
         _rebellionQty -= rebellionQty;
+        return true;
     }
 
 
@@ -82,21 +111,23 @@ public class ResourceManager : Singleton<ResourceManager>
         }
     }
 
-    public void RemoveResource(int resourceQty, ResourceType type)
+    public bool RemoveResource(int resourceQty, ResourceType type)
     {
         switch (type)
         {
             case ResourceType.Wood:
-                RemoveWood(resourceQty); break;
+                return RemoveWood(resourceQty);
             case ResourceType.Rock:
-                RemoveRock(resourceQty); break;
+                return RemoveRock(resourceQty);
             case ResourceType.Crystal:
-                RemoveCrystal(resourceQty); break;
+                return RemoveCrystal(resourceQty);
             case ResourceType.Water:
-                RemoveWater(resourceQty); break;
+                return RemoveWater(resourceQty);
             case ResourceType.Rebellion:
-                RemoveRebellion(resourceQty); break;    
+                return RemoveRebellion(resourceQty);  
         }
+
+        return false;
     }
 
 }

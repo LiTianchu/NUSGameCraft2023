@@ -29,6 +29,7 @@ public class World : MonoBehaviour
     public void AddAdventurer(Adventurer adv)
     {
         adv.transform.SetParent(transform);
+        
         _adventurers.Add(adv);
         adv.OnAdventurerDead += RemoveAdventurer;
     }

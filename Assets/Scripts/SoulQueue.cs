@@ -24,6 +24,10 @@ public class SoulQueue : Singleton<SoulQueue>
     private TMP_Text soulGenderDisplay;
     [SerializeField]
     private TMP_Text soulDeathReasonDisplay;
+    [SerializeField]
+    private TMP_Text soulPowerDisplay;
+    [SerializeField]
+    private TMP_Text soulHealthDisplay;
 
 
     private Queue<Soul> _souls;
@@ -52,10 +56,7 @@ public class SoulQueue : Singleton<SoulQueue>
         _souls = new Queue<Soul>();
         for (int i = 0; i < 4; i++)
         {
-            Soul soul = (Soul)soulFactory.GetProduct((GenderType)(i%2));
-            
-            _currentSoulPopulation++;
-            AddSoul(soul);
+            CreateNewSoul((GenderType)(i % 2));
         }
         
         UpdateQueue();
@@ -88,6 +89,16 @@ public class SoulQueue : Singleton<SoulQueue>
         {
             soulNameDisplay.text = _currentSoul.SoulName;
             soulGenderDisplay.text = _currentSoul.Gender.ToString();
+            soulPowerDisplay.text = _currentSoul.Power.ToString();
+            soulHealthDisplay.text = _currentSoul.Health.ToString();
+            if(_currentSoul.PowerGrowth > 0)
+            {
+                soulPowerDisplay.text += " (+" + _currentSoul.PowerGrowth + ")";
+            }
+            if (_currentSoul.HealthGrowth > 0)
+            {
+                soulHealthDisplay.text += " (+" + _currentSoul.HealthGrowth + ")";
+            }
         }
     }
 
@@ -96,6 +107,8 @@ public class SoulQueue : Singleton<SoulQueue>
         soulNameDisplay.text = "";
         soulGenderDisplay.text = "";
         soulDeathReasonDisplay.text = "";
+        soulPowerDisplay.text = "";
+        soulHealthDisplay.text = "";
     }
 
     private void UpdateQueue()
@@ -142,6 +155,29 @@ public class SoulQueue : Singleton<SoulQueue>
         
     }
 
+    private void CreateNewSoul(GenderType gender)
+    {
+        Soul soul = (Soul)soulFactory.GetProduct(gender);
+
+        _currentSoulPopulation++;
+        AddSoul(soul);
+    }
+
+    public void BuyNewSoul()
+    {
+        if (ResourceManager.Instance.RemoveWood(20) &&
+            ResourceManager.Instance.RemoveRock(20) &&
+            ResourceManager.Instance.RemoveCrystal(20) &&
+            ResourceManager.Instance.RemoveWater(20))
+        {
+            CreateNewSoul((GenderType)UnityEngine.Random.Range(0, 2));
+        }
+        else
+        {
+            Debug.Log("Not enough resources");
+        }
+    }
+
     public Soul GetCurrentSoul()
     {
         return _currentSoul;
@@ -154,11 +190,12 @@ public class SoulQueue : Singleton<SoulQueue>
             Debug.LogWarning("No more souls in queue");
             return;
         }
-        Adventurer adventurer = adventurerFactory.GetProduct(_currentSoul) as Adventurer; //create afventurer
+        Adventurer adventurer = adventurerFactory.GetProduct(_currentSoul, world) as Adventurer; //create afventurer
 
         adventurer.OnAdventurerDead += HandleAdventurerDead;
 
-        adventurer.LifeTime = SOUL_LIFE_TIME; //life time
+        adventurer.LifeTime = _currentSoul.Health; //life time
+        adventurer.WorkPower = _currentSoul.Power; //work power
         adventurer.Artifact = new HolyAxe(adventurer.Artifact); //add decorator
         world.AddAdventurer(adventurer);
 
@@ -169,10 +206,10 @@ public class SoulQueue : Singleton<SoulQueue>
     private void HandleAdventurerDead(Adventurer adventurer)
     {
         Soul soul = adventurer.Soul;
-        //activate gameobject to the soul
-        soul.gameObject.SetActive(true);
+        //activate gameobject of the soul to display it
+        soul.gameObject.SetActive(true); 
 
-        AddSoul(soul);
+        AddSoul(soul); //add soul back to queue
         adventurer.OnAdventurerDead -= HandleAdventurerDead;
     }
 }

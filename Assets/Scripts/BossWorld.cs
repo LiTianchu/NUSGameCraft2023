@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossWorld : World
 {
     [SerializeField]
-    private float rebellionPerAdventurer;
+    private int rebellionPerAdventurer = 100;
 
     public override void Start()
     {
@@ -13,6 +13,12 @@ public class BossWorld : World
     public override void Update()
     {
         base.Update();
-        
+        int rebellion = 0;
+        foreach(Adventurer adv in _adventurers)
+        {
+            rebellion += adv.WorkPower + rebellionPerAdventurer;
+            Debug.Log(rebellion);
+        }
+        GameManager.Instance.TotalRebellion = rebellion;
     }
 }
