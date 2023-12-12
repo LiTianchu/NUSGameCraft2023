@@ -18,9 +18,13 @@ public class HolyAxe : ArtifactDecorator
     private void AddHolyAxeEffect(World w)
     {
         Debug.Log("Holy Axe Effect");
-        if(w.ResourceType == ResourceType.Wood)
+        if(w is ResourceWorld)
         {
-            ResourceManager.Instance.AddResource(2,ResourceType.Wood);
+            if (((ResourceWorld)w).ResourceType == ResourceType.Wood)
+            {
+                ResourceManager.Instance.AddResource(2, ResourceType.Wood);
+            }
         }
+        
     }
 }

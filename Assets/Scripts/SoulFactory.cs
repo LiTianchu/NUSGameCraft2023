@@ -9,8 +9,12 @@ public class SoulFactory : Factory
     private Dictionary<string, bool> _maleSoulNameDict; //bool is true if name is taken
     private Dictionary<string, bool> _femaleSoulNameDict; //bool is true if name is taken
 
-    private void Start()
+    void Start()
     {
+        InitializeNameGeneration();
+    }
+
+    private void InitializeNameGeneration() {
         _maleSoulNameDict = new Dictionary<string, bool>();
         _femaleSoulNameDict = new Dictionary<string, bool>();
 
@@ -42,6 +46,11 @@ public class SoulFactory : Factory
 
     private string GenerateName(GenderType genderType)
     {
+        if(_femaleSoulNameDict == null || _maleSoulNameDict == null)
+        {
+            InitializeNameGeneration();
+        }
+
         string name = "";
         string[] nameArr = genderType == GenderType.Female ? NamePresets.femaleNames : NamePresets.maleNames;
         Dictionary<string, bool> dict = genderType == GenderType.Female ? _femaleSoulNameDict : _maleSoulNameDict;

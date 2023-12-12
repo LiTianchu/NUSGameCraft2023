@@ -6,11 +6,13 @@ public class ResourceManager : Singleton<ResourceManager>
     private int _rockQty;
     private int _crystalQty;
     private int _waterQty;
+    private int _rebellionQty;
 
     public int WoodQty {  get { return _woodQty; } }
     public int RockQty { get { return _rockQty; } }
     public int CystalQty { get { return _crystalQty; } }
     public int WaterQty { get { return _waterQty; } }
+    public int RebellionQty { get { return _rebellionQty; } }
 
     public void AddWood(int woodQty)
     {
@@ -30,6 +32,11 @@ public class ResourceManager : Singleton<ResourceManager>
     public void AddWater(int waterQty)
     {
         _waterQty += waterQty;
+    }
+
+    public void AddRebellion(int rebellionQty)
+    {
+        _rebellionQty += rebellionQty;
     }
 
     public void RemoveWood(int woodQty)
@@ -52,6 +59,12 @@ public class ResourceManager : Singleton<ResourceManager>
         _waterQty -= waterQty;
     }
 
+    public void RemoveRebellion(int rebellionQty)
+    {
+        _rebellionQty -= rebellionQty;
+    }
+
+
     public void AddResource(int resourceQty, ResourceType type)
     {
         switch (type)
@@ -64,6 +77,8 @@ public class ResourceManager : Singleton<ResourceManager>
                 AddCrystal(resourceQty); break;
             case ResourceType.Water:
                 AddWater(resourceQty); break;
+            case ResourceType.Rebellion:
+                AddRebellion(resourceQty); break;
         }
     }
 
@@ -79,6 +94,8 @@ public class ResourceManager : Singleton<ResourceManager>
                 RemoveCrystal(resourceQty); break;
             case ResourceType.Water:
                 RemoveWater(resourceQty); break;
+            case ResourceType.Rebellion:
+                RemoveRebellion(resourceQty); break;    
         }
     }
 

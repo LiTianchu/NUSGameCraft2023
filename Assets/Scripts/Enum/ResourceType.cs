@@ -3,5 +3,6 @@ public enum ResourceType
     Wood,
     Rock,
     Crystal,
-    Water
+    Water,
+    Rebellion
 }
