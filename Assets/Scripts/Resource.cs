@@ -31,6 +31,9 @@ public class Resource : MonoBehaviour
             case ResourceType.Water:
                 _qty = ResourceManager.Instance.WaterQty;
                 break;
+            case ResourceType.Rebellion:
+                _qty = ResourceManager.Instance.RebellionQty;
+                break;
         }
 
         qtyField.text = _qty.ToString();

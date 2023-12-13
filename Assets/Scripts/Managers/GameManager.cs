@@ -12,12 +12,12 @@ public class GameManager : Singleton<GameManager>
     private float _destructionGauge = 0;
     private float _yearAdvanceTimer = 0f;
     private float _destructionAdvanceTimer = 0f;
-    private int _totalRebellion = 0;
+    //private int _totalRebellion = 0;
 
     public int CurrentYear { get { return _currentYear; }}
     public float DestructionGauge { get { return _destructionGauge; }}    
     public bool IsGameOver { get { return _isGameOver; }} 
-    public int TotalRebellion { get { return _totalRebellion; } set { _totalRebellion = value; } }
+    //public int TotalRebellion { get { return _totalRebellion; } set { _totalRebellion = value; } }
 
     // Update is called once per frame
     void Update()
@@ -54,7 +54,7 @@ public class GameManager : Singleton<GameManager>
 
     public void AdvanceDestruction()
     {
-        _destructionGauge += DESTRUCTION_STEP - (float)TotalRebellion/10000;
+        _destructionGauge += DESTRUCTION_STEP - (float)ResourceManager.Instance.RebellionQty/10000;
     }
 
     public void GameOver()

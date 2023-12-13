@@ -12,8 +12,8 @@ public class ResourceManager : Singleton<ResourceManager>
     public int RockQty { get { return _rockQty; } }
     public int CystalQty { get { return _crystalQty; } }
     public int WaterQty { get { return _waterQty; } }
-    public int RebellionQty { get { return _rebellionQty; } }
-
+    public int RebellionQty { get { return _rebellionQty; } set { _rebellionQty = value; } }
+    
     public void AddWood(int woodQty)
     {
         _woodQty += woodQty;

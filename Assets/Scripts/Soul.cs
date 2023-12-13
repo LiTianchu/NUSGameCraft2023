@@ -6,16 +6,16 @@ using UnityEngine;
 public class Soul : MonoBehaviour, IProduct
 {
     [SerializeField]
-    private Sprite maleSprite;
+    private GameObject maleImage;
     [SerializeField]
-    private Sprite femaleSprite;
+    private GameObject femaleImage;
 
     [SerializeField]
     private GenderType gender;
     [SerializeField]
     private string soulName;
-    [SerializeField]
-    private IDeathReason deathReason;
+    //[SerializeField]
+   // private IDeathReason deathReason;
     [SerializeField]
     private int power;
     [SerializeField]
@@ -25,7 +25,7 @@ public class Soul : MonoBehaviour, IProduct
     private int _healthGrowth;
     public GenderType Gender { get { return gender; } set {  gender = value; } }
     public string SoulName { get { return soulName; } set { soulName = value; } }
-    public IDeathReason DeathReason { get { return deathReason; } set { deathReason = value; } }
+    //public IDeathReason DeathReason { get { return deathReason; } set { deathReason = value; } }
     public int Power { get { return power; } set { power = value; } }
     public int Health { get { return health; } set { health = value; } }
     public int PowerGrowth { get { return _powerGrowth; } set { _powerGrowth = value; } }
@@ -56,7 +56,18 @@ public class Soul : MonoBehaviour, IProduct
             _spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
-        _spriteRenderer.sprite = gender == GenderType.Male? maleSprite : femaleSprite;
+        maleImage.SetActive(false);
+        femaleImage.SetActive(false);
+
+        if (gender == GenderType.Male) 
+        { 
+            maleImage.SetActive(true);
+        }
+        else 
+        { 
+            femaleImage.SetActive(true); 
+        }
+        
     }
 
     public void Grow()

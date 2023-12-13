@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff56b733aae82ea4395d1fad5a9a442e
+guid: da1393d34aeece647ab7d22059481023
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,13 +149,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled_Artwork_1
+      name: General_1
       rect:
         serializedVersion: 2
-        x: 536
-        y: 1517
-        width: 82
-        height: 112
+        x: 542
+        y: 1520
+        width: 72
+        height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f24fec0d89937804b85d462f0f36ad9a
-      internalID: -929250988
+      spriteID: f6ae4407620913e489e74e8e795a91ab
+      internalID: -2004826990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_2
+      name: General_2
       rect:
         serializedVersion: 2
-        x: 902
-        y: 1494
-        width: 100
-        height: 128
+        x: 906
+        y: 1499
+        width: 90
+        height: 113
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45c43b3b31d72b14d82b9cf80e5bbe5b
-      internalID: -1844566834
+      spriteID: 731a89e5681a19243ade37cbf714a6d8
+      internalID: 2035123901
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_3
+      name: General_3
       rect:
         serializedVersion: 2
-        x: 1374
+        x: 1380
         y: 1518
-        width: 69
-        height: 104
+        width: 58
+        height: 90
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1e9ed41ee4488745ae171a53d197805
-      internalID: 1155619173
+      spriteID: 951076c6dc666bc4ea96a9fed74705b8
+      internalID: 1004164531
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_5
+      name: General_6
       rect:
         serializedVersion: 2
-        x: 1753
-        y: 1035
-        width: 563
-        height: 562
+        x: 1754
+        y: 1036
+        width: 561
+        height: 563
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289fb0b30be620947829ee8b6855c0a8
-      internalID: 523559783
+      spriteID: 36126f52c583f3341b3bfa043d372d45
+      internalID: -1648477563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_6
+      name: General_7
       rect:
         serializedVersion: 2
         x: 81
@@ -247,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 834fd6cccf913be468fc9d853c81856b
-      internalID: -240818967
+      spriteID: d857ca9c0e979944990f46c2c2b69119
+      internalID: 2048094864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_20
+      name: General_20
       rect:
         serializedVersion: 2
         x: 451
         y: 1084
         width: 394
-        height: 390
+        height: 391
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -268,20 +268,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f64f491fb9fbd6a49b63dfb53abc13d3
-      internalID: 1682395470
+      spriteID: 0254fcb445f5e46439beaa5bbeb01aa9
+      internalID: -1482437408
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_32
+      name: General_33
       rect:
         serializedVersion: 2
         x: 29
-        y: 1097
-        width: 373
-        height: 374
+        y: 1099
+        width: 382
+        height: 372
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +289,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de129a244a25a7b4db223ad98a394d3c
-      internalID: -1257608372
+      spriteID: aa084d0f712b1de4d9481a27c649d10a
+      internalID: 514832720
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_33
+      name: General_34
       rect:
         serializedVersion: 2
         x: 866
-        y: 1083
+        y: 1084
         width: 387
-        height: 388
+        height: 385
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +310,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59c5e95f4357d314aa7257d0fa32b7b8
-      internalID: -1676355232
+      spriteID: a71b989f948458e439cc7aad8acaa3d8
+      internalID: -1317530476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_34
+      name: General_35
       rect:
         serializedVersion: 2
-        x: 1285
-        y: 1076
-        width: 395
-        height: 395
+        x: 1283
+        y: 1074
+        width: 399
+        height: 397
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,20 +331,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a4b62f9c9c00fd49b5c3483b842ea29
-      internalID: 589115734
+      spriteID: d03511bdd71c4b6408582c121d146c0a
+      internalID: 1099070757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_97
+      name: General_54
       rect:
         serializedVersion: 2
-        x: 1833
-        y: 47
-        width: 479
-        height: 643
+        x: 321
+        y: 320
+        width: 317
+        height: 747
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -352,19 +352,145 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c027788141294d94fb4bb0918bac254e
-      internalID: 42539091
+      spriteID: 8a4c11cabef7a124180aa90ae1cf45f2
+      internalID: -1830506160
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_110
+      name: General_56
       rect:
         serializedVersion: 2
         x: 0
-        y: 237
-        width: 12
+        y: 320
+        width: 317
+        height: 747
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7dd208bb2e88047906e74b8980d87f
+      internalID: -1007334228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_57
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 334
+        width: 300
+        height: 713
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e6b12c82839c74fad2760cb48ca7a1
+      internalID: -2121566501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_60
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 333
+        width: 300
+        height: 713
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7364b01e5e43054ab6cf3d64f65a14e
+      internalID: 1419644132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_66
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 759
+        width: 243
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bb5b1201cc32a44bf7e3368c4ad295
+      internalID: -1765628678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_67
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 699
+        width: 317
+        height: 316
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2226de44920ad2f469a04fc6229c02f6
+      internalID: 1609024591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_70
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 747
+        width: 139
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d932d0dc29f3c409e30ea19706055e
+      internalID: -1483361312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_72
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 758
+        width: 11
         height: 4
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -373,71 +499,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54e1d005ecc6eea47b5714ed52768ebb
-      internalID: 1611824385
+      spriteID: 36491593d5ba4d94a8b7f9a5ad7f9ce7
+      internalID: -528765598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_112
+      name: General_74
       rect:
         serializedVersion: 2
-        x: 1381
-        y: 21
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 01a1781f0b7d17e49944b4498a46ac76
-      internalID: -1829473267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Untitled_Artwork_0
-      rect:
-        serializedVersion: 2
-        x: 235
+        x: 1290
         y: 0
-        width: 372
-        height: 797
+        width: 537
+        height: 698
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 674f86a6fa1757142ad2156f163a6368
-      internalID: 291210544
+      spriteID: e75712441b4fa4341933c26b0462e558
+      internalID: -175927310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Untitled_Artwork_4
+      name: General_75
       rect:
         serializedVersion: 2
-        x: 712
-        y: 19
-        width: 296
-        height: 690
+        x: 1823
+        y: 1
+        width: 537
+        height: 697
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac16bee1df37ae648b0bb1acac3549fa
-      internalID: -1874805989
+      spriteID: 247bae46874a68248a8a307001a03e6c
+      internalID: 181972730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: General_0
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 746
+        width: 195
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 499c96c2177375043864caca68b72aa6
+      internalID: 625160524
       vertices: []
       indices: 
       edges: []
@@ -453,119 +579,86 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Untitled_Artwork_0: 291210544
-      Untitled_Artwork_1: -929250988
-      Untitled_Artwork_10: -1305763365
-      Untitled_Artwork_100: -848726077
-      Untitled_Artwork_101: 1106492789
-      Untitled_Artwork_102: -1038222074
-      Untitled_Artwork_103: 497476209
-      Untitled_Artwork_104: -1132178554
-      Untitled_Artwork_105: -243238592
-      Untitled_Artwork_106: 998388168
-      Untitled_Artwork_107: -1162731254
-      Untitled_Artwork_108: -923556590
-      Untitled_Artwork_109: -1729141650
-      Untitled_Artwork_11: -1426653024
-      Untitled_Artwork_110: 1611824385
-      Untitled_Artwork_111: 1418752328
-      Untitled_Artwork_112: -1829473267
-      Untitled_Artwork_12: -1123792638
-      Untitled_Artwork_13: 2069145404
-      Untitled_Artwork_14: -1859191373
-      Untitled_Artwork_15: 1995561887
-      Untitled_Artwork_16: -370717512
-      Untitled_Artwork_17: 1695664136
-      Untitled_Artwork_18: 1589825567
-      Untitled_Artwork_19: -96751655
-      Untitled_Artwork_2: -1844566834
-      Untitled_Artwork_20: 1682395470
-      Untitled_Artwork_21: 669179539
-      Untitled_Artwork_22: -985449706
-      Untitled_Artwork_23: 1342744290
-      Untitled_Artwork_24: -235286780
-      Untitled_Artwork_25: -392726495
-      Untitled_Artwork_26: -591658008
-      Untitled_Artwork_27: 906176655
-      Untitled_Artwork_28: 2027629163
-      Untitled_Artwork_29: 1174036792
-      Untitled_Artwork_3: 1155619173
-      Untitled_Artwork_30: -787406905
-      Untitled_Artwork_31: 1865663661
-      Untitled_Artwork_32: -1257608372
-      Untitled_Artwork_33: -1676355232
-      Untitled_Artwork_34: 589115734
-      Untitled_Artwork_35: 23091478
-      Untitled_Artwork_36: -339109142
-      Untitled_Artwork_37: -1331687665
-      Untitled_Artwork_38: -1868109307
-      Untitled_Artwork_39: -652485465
-      Untitled_Artwork_4: -1874805989
-      Untitled_Artwork_40: 1194528853
-      Untitled_Artwork_41: -806705697
-      Untitled_Artwork_42: 1440642812
-      Untitled_Artwork_43: 662419031
-      Untitled_Artwork_44: -91558315
-      Untitled_Artwork_45: 314506586
-      Untitled_Artwork_46: -1755449610
-      Untitled_Artwork_47: 1523841520
-      Untitled_Artwork_48: -497462158
-      Untitled_Artwork_49: -116154342
-      Untitled_Artwork_5: 523559783
-      Untitled_Artwork_50: 1442613837
-      Untitled_Artwork_51: 1026087610
-      Untitled_Artwork_52: 738385705
-      Untitled_Artwork_53: 827957084
-      Untitled_Artwork_54: 115263244
-      Untitled_Artwork_55: -259348685
-      Untitled_Artwork_56: 1860778102
-      Untitled_Artwork_57: 1117714015
-      Untitled_Artwork_58: 1032557057
-      Untitled_Artwork_59: 1955998189
-      Untitled_Artwork_6: -240818967
-      Untitled_Artwork_60: 454042941
-      Untitled_Artwork_61: 2038525371
-      Untitled_Artwork_62: 293564707
-      Untitled_Artwork_63: -996625120
-      Untitled_Artwork_64: -1987804209
-      Untitled_Artwork_65: 971869026
-      Untitled_Artwork_66: -1380154966
-      Untitled_Artwork_67: 185696369
-      Untitled_Artwork_68: 386082540
-      Untitled_Artwork_69: 1056932041
-      Untitled_Artwork_7: -1462636149
-      Untitled_Artwork_70: 120650356
-      Untitled_Artwork_71: -207250032
-      Untitled_Artwork_72: -1586717742
-      Untitled_Artwork_73: 97263010
-      Untitled_Artwork_74: 1386317690
-      Untitled_Artwork_75: 1771224656
-      Untitled_Artwork_76: 760505303
-      Untitled_Artwork_77: 626740027
-      Untitled_Artwork_78: -1956542964
-      Untitled_Artwork_79: -745661236
-      Untitled_Artwork_8: 760895637
-      Untitled_Artwork_80: 1423246135
-      Untitled_Artwork_81: 1176362474
-      Untitled_Artwork_82: -1578488115
-      Untitled_Artwork_83: -1956576521
-      Untitled_Artwork_84: 1382088334
-      Untitled_Artwork_85: -1010338257
-      Untitled_Artwork_86: 54322544
-      Untitled_Artwork_87: 584047573
-      Untitled_Artwork_88: 1512285384
-      Untitled_Artwork_89: 721495500
-      Untitled_Artwork_9: -1255225629
-      Untitled_Artwork_90: -1074920145
-      Untitled_Artwork_91: 1161260996
-      Untitled_Artwork_92: -756864308
-      Untitled_Artwork_93: -1006937263
-      Untitled_Artwork_94: -1077037571
-      Untitled_Artwork_95: 431086642
-      Untitled_Artwork_96: -311756777
-      Untitled_Artwork_97: 42539091
-      Untitled_Artwork_98: -1963419627
-      Untitled_Artwork_99: -1997426894
+      General_0: 625160524
+      General_1: -2004826990
+      General_10: -1696499467
+      General_11: 2081639450
+      General_12: 521537865
+      General_13: -1309177393
+      General_14: 2025540827
+      General_15: -1394756885
+      General_16: -771403510
+      General_17: -385274008
+      General_18: 1877423539
+      General_19: 1200991757
+      General_2: 2035123901
+      General_20: -1482437408
+      General_21: -1490844869
+      General_22: -2080697168
+      General_23: -1240767116
+      General_24: -318623040
+      General_25: -1255148272
+      General_26: -2100757819
+      General_27: 1335264562
+      General_28: 330597893
+      General_29: -1601774557
+      General_3: 1004164531
+      General_30: -1986865246
+      General_31: 298666768
+      General_32: -211439829
+      General_33: 514832720
+      General_34: -1317530476
+      General_35: 1099070757
+      General_36: 714163696
+      General_37: -519202251
+      General_38: -770493722
+      General_39: -47866249
+      General_4: 1298971604
+      General_40: -106348959
+      General_41: -892638539
+      General_42: 395018063
+      General_43: -1067090515
+      General_44: -1034931536
+      General_45: -29405217
+      General_46: 720536649
+      General_47: -134854726
+      General_48: 1238556684
+      General_49: 505868855
+      General_5: -2050402577
+      General_50: 1772961892
+      General_51: -2076107785
+      General_52: 519244499
+      General_53: -1629521968
+      General_54: -1830506160
+      General_55: -988274147
+      General_56: -1007334228
+      General_57: -2121566501
+      General_58: 1523029183
+      General_59: -1145901155
+      General_6: -1648477563
+      General_60: 1419644132
+      General_61: -554335296
+      General_62: 2093393506
+      General_63: -1971880034
+      General_64: -477789628
+      General_65: -659050659
+      General_66: -1765628678
+      General_67: 1609024591
+      General_68: -1483163192
+      General_69: -1749496355
+      General_7: 2048094864
+      General_70: -1483361312
+      General_71: -325575993
+      General_72: -528765598
+      General_73: -1136520513
+      General_74: -175927310
+      General_75: 181972730
+      General_76: -1893218057
+      General_77: 971918679
+      General_78: -1281379592
+      General_79: 585706821
+      General_8: -489275097
+      General_9: 838460136
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

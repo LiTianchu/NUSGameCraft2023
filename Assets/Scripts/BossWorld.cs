@@ -19,6 +19,6 @@ public class BossWorld : World
             rebellion += adv.WorkPower + rebellionPerAdventurer;
             Debug.Log(rebellion);
         }
-        GameManager.Instance.TotalRebellion = rebellion;
+        ResourceManager.Instance.RebellionQty = rebellion;
     }
 }

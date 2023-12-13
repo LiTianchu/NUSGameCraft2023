@@ -10,7 +10,7 @@ public class ResourceWorld : World
     private float resourceGeneratingCD;
     [SerializeField]
     private int baseResourceQty;
-
+    
     protected float _nextResourceGeneratingTime;
     public ResourceType ResourceType { get => generatingResourceType; set => generatingResourceType = value; }
    

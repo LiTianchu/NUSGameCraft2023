@@ -40,4 +40,9 @@ public class World : MonoBehaviour
         adv.OnAdventurerDead -= RemoveAdventurer;
         Destroy(adv.gameObject);
     }
+
+    public int GetNumOfAdv()
+    {
+        return _adventurers.Count;
+    }
 }

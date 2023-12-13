@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoulQueue : Singleton<SoulQueue>
 {
@@ -21,14 +22,17 @@ public class SoulQueue : Singleton<SoulQueue>
     [SerializeField]
     private TMP_Text soulNameDisplay;
     [SerializeField]
-    private TMP_Text soulGenderDisplay;
+    private Image soulGenderDisplay;
     [SerializeField]
     private TMP_Text soulDeathReasonDisplay;
     [SerializeField]
     private TMP_Text soulPowerDisplay;
     [SerializeField]
     private TMP_Text soulHealthDisplay;
-
+    [SerializeField]
+    private Sprite maleSymbol;
+    [SerializeField]
+    private Sprite femaleSymbol;
 
     private Queue<Soul> _souls;
     private Soul _currentSoul;
@@ -88,24 +92,39 @@ public class SoulQueue : Singleton<SoulQueue>
         if (_currentSoul != null)
         {
             soulNameDisplay.text = _currentSoul.SoulName;
-            soulGenderDisplay.text = _currentSoul.Gender.ToString();
+
+            soulGenderDisplay.gameObject.SetActive(true);
+            if (_currentSoul.Gender == GenderType.Male)
+            {
+                soulGenderDisplay.sprite = maleSymbol;
+            }
+            else
+            {
+                soulGenderDisplay.sprite = femaleSymbol;
+            }
+            soulGenderDisplay.SetNativeSize();
+
             soulPowerDisplay.text = _currentSoul.Power.ToString();
             soulHealthDisplay.text = _currentSoul.Health.ToString();
+
             if(_currentSoul.PowerGrowth > 0)
             {
                 soulPowerDisplay.text += " (+" + _currentSoul.PowerGrowth + ")";
             }
+
             if (_currentSoul.HealthGrowth > 0)
             {
                 soulHealthDisplay.text += " (+" + _currentSoul.HealthGrowth + ")";
             }
+
         }
+
     }
 
     public void ClearSoulInfo()
     {
         soulNameDisplay.text = "";
-        soulGenderDisplay.text = "";
+        soulGenderDisplay.gameObject.SetActive(false);
         soulDeathReasonDisplay.text = "";
         soulPowerDisplay.text = "";
         soulHealthDisplay.text = "";
