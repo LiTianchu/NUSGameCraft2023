@@ -130,4 +130,30 @@ public class ResourceManager : Singleton<ResourceManager>
         return false;
     }
 
+    public void AddResource(int wood, int rock, int crystal, int water)
+    {
+        AddWood(wood);
+        AddRock(rock);
+        AddCrystal(crystal);
+        AddWater(water);
+    }
+
+    public bool RemoveResource(int wood, int rock, int crystal, int water)
+    {
+        int originalWood = _woodQty; //store original qty
+        int originalRock = _rockQty;
+        int originalCrystal = _crystalQty;
+        int originalWater = _waterQty;
+
+        bool allSuccess = RemoveWood(wood) && RemoveRock(rock) && RemoveCrystal(crystal) && RemoveWater(water);
+        if (!allSuccess) //if not all success, restore original qty
+        {
+            _woodQty = originalWood;
+            _rockQty = originalRock;
+            _crystalQty = originalCrystal;
+            _waterQty = originalWater;
+        }
+        return allSuccess;
+    }
+
 }

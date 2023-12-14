@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class SoulQueue : Singleton<SoulQueue>
     [SerializeField]
     private Vector3 soulScaleDifference;
     [SerializeField]
+    private Vector3 soulCreationPos;
+    [SerializeField]
     private AdventurerFactory adventurerFactory;
     [SerializeField]
     private SoulFactory soulFactory;
@@ -30,17 +33,25 @@ public class SoulQueue : Singleton<SoulQueue>
     [SerializeField]
     private TMP_Text soulHealthDisplay;
     [SerializeField]
+    private TMP_Text soulInQueueNumDisplay;
+    [SerializeField]
+    private TMP_Text soulPopulationDisplay;
+    [SerializeField]
+    private AddCapacity addCapacityBtn;
+    [SerializeField]
     private Sprite maleSymbol;
     [SerializeField]
     private Sprite femaleSymbol;
+    
 
     private Queue<Soul> _souls;
     private Soul _currentSoul;
-
+    private int _maxSoulPopulation=5;
     private int _currentSoulPopulation;
 
-    private static readonly int MAX_SOUL_POPULATION = 50;
-    private static readonly float SOUL_LIFE_TIME = 10f;
+    private static readonly int SOUL_COST = 100;
+    
+    public Vector2 FirstSouldPos { get => firstSoulPos; }
 
     public event Action OnSoulChanged;
 
@@ -63,20 +74,12 @@ public class SoulQueue : Singleton<SoulQueue>
             CreateNewSoul((GenderType)(i % 2));
         }
         
-        UpdateQueue();
+        ProgressQueue();
         //NextSoul();
     }
 
     public void NextSoul()
     {
-        //send away the current soul
-        if(_currentSoul != null)
-        {
-            _currentSoul.SendAway();
-            _currentSoul = null;
-            ClearSoulInfo();
-        }
-
         //set current soul as the first soul in the queue
         if(_souls.Count == 0)
         {
@@ -84,8 +87,7 @@ public class SoulQueue : Singleton<SoulQueue>
             return;
         }
         _currentSoul = _souls.Dequeue();
-        UpdateQueue();
-
+        ProgressQueue();
     }
 
     public void UpdateSoulInfo() { 
@@ -130,22 +132,26 @@ public class SoulQueue : Singleton<SoulQueue>
         soulHealthDisplay.text = "";
     }
 
-    private void UpdateQueue()
+    private void ProgressQueue()
     {
         UpdateSoulInfo();
         //move up the curr soul to the front
-        _currentSoul.transform.localPosition = firstSoulPos;
+        //_currentSoul.transform.localPosition = firstSoulPos;
+        _currentSoul.Destination = firstSoulPos;
         _currentSoul.transform.localScale = Vector3.one;
-        
-        if(_souls.Count == 0)
+
+        soulInQueueNumDisplay.text = _souls.Count + " More Souls Waiting";
+
+        if (_souls.Count == 0)
         {
             return;
         }
 
         //move the next soul to the curr soul's back
         Soul soulAfter = _souls.Peek();
-        soulAfter.transform.localPosition = firstSoulPos + soulPositionOffset;
-        soulAfter.transform.localScale = _currentSoul.transform.localScale - soulScaleDifference;
+        //soulAfter.transform.localPosition = firstSoulPos + soulPositionOffset;
+        soulAfter.Destination = firstSoulPos + soulPositionOffset;
+        //soulAfter.transform.localScale = _currentSoul.transform.localScale - soulScaleDifference;
     }
 
     public void AddSoul(Soul soul)
@@ -155,7 +161,7 @@ public class SoulQueue : Singleton<SoulQueue>
         {
             _currentSoul = soul;
 
-            UpdateQueue();
+            ProgressQueue();
             return;
         }
 
@@ -163,37 +169,58 @@ public class SoulQueue : Singleton<SoulQueue>
         
         if (_souls.Count == 1) //set display position and scale accordingly
         {
-            soul.transform.localPosition = firstSoulPos + soulPositionOffset;
-            soul.transform.localScale = Vector3.one - soulScaleDifference;
+            //soul.transform.localPosition = firstSoulPos + soulPositionOffset;
+            soul.Destination = firstSoulPos + soulPositionOffset;
+            //soul.transform.localScale = Vector3.one - soulScaleDifference;
         }
         else
         {
-            soul.transform.localPosition = firstSoulPos + soulPositionOffset * 2;
-            soul.transform.localScale = Vector3.one - soulScaleDifference * 2;
+            //soul.transform.localPosition = firstSoulPos + soulPositionOffset * 2;
+            soul.Destination = firstSoulPos + soulPositionOffset * 2;
+            //soul.transform.localScale = Vector3.one - soulScaleDifference * 2;
         }
+
+        soulInQueueNumDisplay.text = _souls.Count + " More Souls Waiting";
         
     }
 
     private void CreateNewSoul(GenderType gender)
     {
-        Soul soul = (Soul)soulFactory.GetProduct(gender);
+        
 
+        Soul soul = (Soul)soulFactory.GetProduct(gender);
+        soul.transform.localPosition = soulCreationPos;
         _currentSoulPopulation++;
+        soulPopulationDisplay.text = _currentSoulPopulation + "/" + _maxSoulPopulation;
         AddSoul(soul);
     }
 
     public void BuyNewSoul()
     {
-        if (ResourceManager.Instance.RemoveWood(20) &&
-            ResourceManager.Instance.RemoveRock(20) &&
-            ResourceManager.Instance.RemoveCrystal(20) &&
-            ResourceManager.Instance.RemoveWater(20))
+        if (_currentSoulPopulation >= _maxSoulPopulation)
+        {
+            Debug.LogWarning("Max soul population reached");
+            return;
+        }
+
+        if (ResourceManager.Instance.RemoveResource(0,0,SOUL_COST,SOUL_COST))
         {
             CreateNewSoul((GenderType)UnityEngine.Random.Range(0, 2));
         }
         else
         {
             Debug.Log("Not enough resources");
+        }
+    }
+
+    public void AddCapacity()
+    {
+        if (ResourceManager.Instance.RemoveResource(addCapacityBtn.WoodCost,addCapacityBtn.RockCost,0,0))
+        {
+            _maxSoulPopulation += 5;
+            addCapacityBtn.AddWoodCost();
+            addCapacityBtn.AddStoneCost();
+            soulPopulationDisplay.text = _currentSoulPopulation + "/" + _maxSoulPopulation;
         }
     }
 
@@ -209,14 +236,21 @@ public class SoulQueue : Singleton<SoulQueue>
             Debug.LogWarning("No more souls in queue");
             return;
         }
-        Adventurer adventurer = adventurerFactory.GetProduct(_currentSoul, world) as Adventurer; //create afventurer
+
+        Adventurer adventurer = adventurerFactory.GetProduct(_currentSoul, world, _currentSoul.Health, _currentSoul.Power) as Adventurer; //create afventurer
 
         adventurer.OnAdventurerDead += HandleAdventurerDead;
-
-        adventurer.LifeTime = _currentSoul.Health; //life time
-        adventurer.WorkPower = _currentSoul.Power; //work power
-        adventurer.Artifact = new HolyAxe(adventurer.Artifact); //add decorator
+        
+        ArtifactSelector.Instance.ClearAllSlots(); //clear all artifact slots
         world.AddAdventurer(adventurer);
+
+        //send away the current soul
+        if (_currentSoul != null)
+        {
+            _currentSoul.SendAway(world);
+            _currentSoul = null;
+            ClearSoulInfo();
+        }
 
         NextSoul();
 
@@ -225,6 +259,7 @@ public class SoulQueue : Singleton<SoulQueue>
     private void HandleAdventurerDead(Adventurer adventurer)
     {
         Soul soul = adventurer.Soul;
+        soul.DestinationWorld = null;
         //activate gameobject of the soul to display it
         soul.gameObject.SetActive(true); 
 

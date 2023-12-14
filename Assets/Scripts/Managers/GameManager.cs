@@ -3,38 +3,49 @@ using UnityEngine;
 public class GameManager : Singleton<GameManager>
 {
     private static readonly int YEAR_STEP = 1;
-    private static readonly float DESTRUCTION_STEP = 0.1f;
     private static readonly float YEAR_ADVANCE_RATE = 1f;
+    private static readonly float DESTRUCTION_STEP = 0.01f;
     private static readonly float DESTRUCTION_ADVANCE_RATE = 0.1f;
+    private static readonly float DESTRUCTION_ACCELRATION_STEP = 0.01f;
+    private static readonly float DESTRUCTION_ACCELERATION_RATE = 10f;
+    private static readonly float MAX_DESTRUCTION_STEP = 1f;
 
     private bool _isGameOver = false;
+    private bool _isGamePaused = false;
     private int _currentYear = 2023;
     private float _destructionGauge = 0;
-    private float _yearAdvanceTimer = 0f;
-    private float _destructionAdvanceTimer = 0f;
-    //private int _totalRebellion = 0;
 
-    public int CurrentYear { get { return _currentYear; }}
-    public float DestructionGauge { get { return _destructionGauge; }}    
-    public bool IsGameOver { get { return _isGameOver; }} 
-    //public int TotalRebellion { get { return _totalRebellion; } set { _totalRebellion = value; } }
+    private float _timePassed = 0f;
+    private float _nextYearTime = 0f;
+    private float _nextDestructionTime = 0f;
+    private float _nextDestructionAccelerationTime = 0f;
+    private float _finalDestructionAdvanceStep = DESTRUCTION_STEP;
 
+    public int CurrentYear { get { return _currentYear; } }
+    public float DestructionGauge { get { return _destructionGauge; } }
+    public bool IsGameOver { get { return _isGameOver; } }
+    public float TimePassed { get { return _timePassed; } }
+
+    private void Start()
+    {
+        //Time.timeScale = 10;
+    }
     // Update is called once per frame
     void Update()
     {
-        _yearAdvanceTimer += Time.deltaTime;
-        _destructionAdvanceTimer += Time.deltaTime;
-        if (_yearAdvanceTimer >= YEAR_ADVANCE_RATE && !_isGameOver)
+        _timePassed += _isGamePaused ? 0 : Time.deltaTime;
+
+        if (_timePassed >= _nextYearTime && !_isGameOver)
         {
-            _yearAdvanceTimer = 0f;
+            _nextYearTime = _timePassed + YEAR_ADVANCE_RATE;
             AdvanceYear();
 
-            
+
         }
 
-        if (_destructionAdvanceTimer >= DESTRUCTION_ADVANCE_RATE && !_isGameOver)
+        if (_timePassed >= _nextDestructionTime && !_isGameOver)
         {
-            _destructionAdvanceTimer = 0f;
+            _nextDestructionTime = _timePassed + DESTRUCTION_ADVANCE_RATE;
             if (_destructionGauge >= 100)
             {
                 _destructionGauge = 100;
@@ -43,6 +54,18 @@ public class GameManager : Singleton<GameManager>
             else
             {
                 AdvanceDestruction();
+            }
+        }
+
+        if (_timePassed >= _nextDestructionAccelerationTime && !_isGameOver)
+        {
+
+            _nextDestructionAccelerationTime = _timePassed + DESTRUCTION_ACCELERATION_RATE;
+            _finalDestructionAdvanceStep += DESTRUCTION_ACCELRATION_STEP;
+            if (_finalDestructionAdvanceStep > MAX_DESTRUCTION_STEP)
+            {
+
+                _finalDestructionAdvanceStep = MAX_DESTRUCTION_STEP;
             }
         }
     }
@@ -54,13 +77,32 @@ public class GameManager : Singleton<GameManager>
 
     public void AdvanceDestruction()
     {
-        _destructionGauge += DESTRUCTION_STEP - (float)ResourceManager.Instance.RebellionQty/10000;
+        _destructionGauge += _finalDestructionAdvanceStep - (float)ResourceManager.Instance.RebellionQty / 1000;
+    }
+
+    public void AddDestruction(float destruction)
+    {
+        Debug.Log("Excalibur");
+        _destructionGauge += destruction;
     }
 
     public void GameOver()
     {
         _isGameOver = true;
+        PauseGame();
         Debug.Log("GameOver");
     }
-    
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        _isGamePaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        _isGamePaused = false;
+    }
+
 }

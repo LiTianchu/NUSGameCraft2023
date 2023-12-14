@@ -1,35 +1,37 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Adventurer : MonoBehaviour, IProduct
 {
     private Soul _soul;
-    private IArtifact _artifact;
+    private List<Artifact> _artifacts;
     private float _lifeTime;
     private int _workPower;
     private World _world;
 
     public Soul Soul { get { return _soul; } set { _soul = value; } }
-    public IArtifact Artifact {  get { return _artifact; } set { _artifact = value; } }
+    public List<Artifact> Artifacts {  get { return _artifacts; } set { _artifacts = value; } }
     public float LifeTime { get { return _lifeTime; } set { _lifeTime = value; } }
     public int WorkPower { get { return _workPower; } set { _workPower = value; } }
     public World World { get { return _world; } set { _world = value; } }
     public event Action<Adventurer> OnAdventurerDead;
 
+    private float _timeOfDeath;
     public void Initialize()
     {
-        
+        _timeOfDeath = GameManager.Instance.TimePassed + _lifeTime;
     }
 
     private void Update()
     {
-        if (_lifeTime < 0) //adventurer dies, it will be sent back to the pool
+        if (GameManager.Instance.TimePassed > _timeOfDeath) //adventurer dies, it will be sent back to the pool
         {
             GrowAbility();
             OnAdventurerDead?.Invoke(this);
             
         }
-        _lifeTime -= Time.deltaTime;
+        
     }
 
     private void GrowAbility()

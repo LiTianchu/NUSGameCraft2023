@@ -109,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.100006, y: -58}
+  m_AnchoredPosition: {x: 8.899994, y: -58}
   m_SizeDelta: {x: 69.00904, y: 104.00001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4623373141592811699
@@ -319,7 +319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.100006, y: -45}
+  m_AnchoredPosition: {x: 8.899994, y: -45}
   m_SizeDelta: {x: 108.014145, y: 85}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6389366399541693287
@@ -394,7 +394,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.4, y: -65.100006}
+  m_AnchoredPosition: {x: 54.906715, y: -65.100006}
   m_SizeDelta: {x: 80.7865, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &963583491819342624
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
   m_sharedMaterial: {fileID: -3955228353989299044, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
@@ -528,7 +528,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.9, y: -65.100006}
+  m_AnchoredPosition: {x: 13.9, y: -65.100006}
   m_SizeDelta: {x: 80.7865, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7509895216045545260
@@ -559,7 +559,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
   m_sharedMaterial: {fileID: -3955228353989299044, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
@@ -662,7 +662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.593262, y: -45}
+  m_AnchoredPosition: {x: -31.3, y: -45}
   m_SizeDelta: {x: 82.01074, y: 112}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7328383675671609380
@@ -737,7 +737,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 59.400013, y: -78.1}
+  m_AnchoredPosition: {x: 54.906727, y: -78.1}
   m_SizeDelta: {x: 80.7865, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6149397612772841925
@@ -768,7 +768,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
   m_sharedMaterial: {fileID: -3955228353989299044, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
@@ -871,7 +871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 22.910337, y: -78.100006}
+  m_AnchoredPosition: {x: 13.910337, y: -78.100006}
   m_SizeDelta: {x: 80.7865, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &356098694733561567
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 99
+  m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
   m_sharedMaterial: {fileID: -3955228353989299044, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
@@ -1080,7 +1080,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -25.593262, y: -58}
+  m_AnchoredPosition: {x: -31.299988, y: -58}
   m_SizeDelta: {x: 100.01311, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5042952889972343597

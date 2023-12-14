@@ -8,12 +8,10 @@ public class ResourceWorld : World
     private ResourceType generatingResourceType;
     [SerializeField]
     private float resourceGeneratingCD;
-    [SerializeField]
-    private int baseResourceQty;
-    
+
     protected float _nextResourceGeneratingTime;
     public ResourceType ResourceType { get => generatingResourceType; set => generatingResourceType = value; }
-   
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -25,10 +23,10 @@ public class ResourceWorld : World
     public override void Update()
     {
         base.Update();
-        if (_secPassed > _nextResourceGeneratingTime)
+        if (GameManager.Instance.TimePassed > _nextResourceGeneratingTime)
         {
             //generate resource
-            _nextResourceGeneratingTime = _secPassed + resourceGeneratingCD;
+            _nextResourceGeneratingTime = GameManager.Instance.TimePassed + resourceGeneratingCD;
             GenerateResource();
         }
 
@@ -36,13 +34,28 @@ public class ResourceWorld : World
 
     private void GenerateResource()
     {
-
+        int resourceQty = 0;
         foreach (Adventurer adv in _adventurers)
         {
-            ResourceManager.Instance.AddResource(baseResourceQty, generatingResourceType);
+            resourceQty += adv.WorkPower;
 
-            adv.Artifact.UseEffect(this); //use artifact decorator effect
+            if (adv.Artifacts == null)
+            {
+                continue;
+            }
+
+            foreach (Artifact artifact in adv.Artifacts)
+            {
+                if (artifact is ResourceArtifact)
+                {
+                    artifact.WorldContext = this;
+                    artifact.BasicValue = adv.WorkPower;
+                    resourceQty += artifact.UseEffect(); //use artifact effect
+                }
+            }
+
         }
+        ResourceManager.Instance.AddResource(resourceQty, generatingResourceType);
 
     }
 }

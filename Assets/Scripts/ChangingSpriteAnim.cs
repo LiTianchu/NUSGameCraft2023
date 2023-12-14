@@ -12,7 +12,6 @@ public class ChangingSpriteAnim : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     
 
-    private float _timePassed = 0f;
     private float _nextSpriteTime = 0f;
     private int _currentSpriteIndex = 0;
     // Start is called before the first frame update
@@ -25,11 +24,10 @@ public class ChangingSpriteAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _timePassed += Time.deltaTime;
-        if (_timePassed >= _nextSpriteTime)
+
+        if (GameManager.Instance.TimePassed >= _nextSpriteTime)
         {
-            _timePassed = 0f;
-            _nextSpriteTime = _timePassed + timeBetweenSprites;
+            _nextSpriteTime = GameManager.Instance.TimePassed + timeBetweenSprites;
             _currentSpriteIndex++;
             if (_currentSpriteIndex >= sprites.Length)
             {

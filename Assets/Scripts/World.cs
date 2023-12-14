@@ -10,7 +10,7 @@ public class World : MonoBehaviour
     private TMP_Text adventurerNumDisplay;
     
 
-    protected float _secPassed;
+    //protected float _secPassed;
     protected HashSet<Adventurer> _adventurers;
 
     public virtual void Start()
@@ -20,9 +20,7 @@ public class World : MonoBehaviour
 
     public virtual void Update()
     {
-        _secPassed += Time.deltaTime;
-
-        
+        //_secPassed += Time.deltaTime;
         adventurerNumDisplay.text = _adventurers.Count.ToString();
     }
 
@@ -31,6 +29,7 @@ public class World : MonoBehaviour
         adv.transform.SetParent(transform);
         
         _adventurers.Add(adv);
+        OnAdventurerEnter(adv);
         adv.OnAdventurerDead += RemoveAdventurer;
     }
 
@@ -44,5 +43,10 @@ public class World : MonoBehaviour
     public int GetNumOfAdv()
     {
         return _adventurers.Count;
+    }
+
+    public virtual void OnAdventurerEnter(Adventurer adv)
+    {
+        
     }
 }

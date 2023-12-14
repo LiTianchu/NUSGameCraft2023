@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IArtifact
 {
-    void UseEffect(World world);
+    int UseEffect();
     
 }
