@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class HoverTarget : MonoBehaviour
@@ -15,6 +16,7 @@ public class HoverTarget : MonoBehaviour
     private void OnMouseEnter()
     {
         _showHintTime = GameManager.Instance.TimePassed + waitTime;
+        //HoverHint.Instance.ShowHint(hintContent, Input.mousePosition);
         
     }
 
@@ -26,9 +28,19 @@ public class HoverTarget : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(GameManager.Instance.TimePassed > _showHintTime)
+        if(GameManager.Instance.TimePassed >= _showHintTime)
         {
-            HoverHint.Instance.ShowHint(hintContent, Input.mousePosition);
+            //Debug.Log(Input.mousePosition);
+            HoverHint.Instance.ShowHint(hintContent, Input.mousePosition,true);
         }
     }
+
+
+
+    public void SetHintContent(string content)
+    {
+        hintContent = content;
+    }
+
+    
 }

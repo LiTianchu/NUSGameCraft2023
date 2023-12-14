@@ -7,6 +7,7 @@ public abstract class Artifact : MonoBehaviour, IArtifact
 {
     [SerializeField]
     private string artifactName;
+    [TextArea(5, 10)]
     [SerializeField]
     private string artifactDescription;
     [SerializeField]
@@ -32,6 +33,7 @@ public abstract class Artifact : MonoBehaviour, IArtifact
 
     private World _worldContext;
     private int _basicValue;
+    private HoverTargetUI _hoverTarget;
     public World WorldContext { get { return _worldContext; } set { _worldContext = value; }}
     public int BasicValue { get => _basicValue; set => _basicValue = value; }
     public Sprite ArtifactSprite { get => artifactSprite; set => artifactSprite = value; }
@@ -46,6 +48,12 @@ public abstract class Artifact : MonoBehaviour, IArtifact
         rockCostDisplay.text = rockCost.ToString();
         crystalCostDisplay.text = crystalCost.ToString();
         waterCostDisplay.text = waterCost.ToString();
+
+        _hoverTarget = GetComponent<HoverTargetUI>();
+        if(_hoverTarget != null)
+        {
+            _hoverTarget.SetHintContent("<b><color=#A44064>" + artifactName + "</color></b>" + "<br><br>" + artifactDescription);
+        }
     }
     public int UseEffect()
     {

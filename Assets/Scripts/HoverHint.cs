@@ -9,44 +9,97 @@ public class HoverHint : Singleton<HoverHint>
     private TMP_Text hintContent;
     [SerializeField]
     private float maxWidth;
+
+    private float width;
+    private float height;
+
     private RectTransform _rectTransform;
+
+    public float Width { get => width; set => width = value; }
+    public float Height { get => height; set => height = value; }
+
     private void Start()
     {
         gameObject.SetActive(false);
         _rectTransform = GetComponent<RectTransform>();
+        Debug.Log(Screen.width.ToString() + " " + Screen.height.ToString());
     }
 
-    public void ShowHint(string content, Vector2 position)
+    public void ShowHint(string content, Vector2 screenPos, bool autoSize)
     {
-        //resize the hint box to fit the content
-        hintContent.ForceMeshUpdate();
-        float width = hintContent.preferredWidth < maxWidth? hintContent.preferredWidth : maxWidth;
-        float height = hintContent.preferredHeight;
-        _rectTransform = GetComponent<RectTransform>();
-        _rectTransform.sizeDelta = new Vector2(width, height);
 
-        //prevent it from going out of screen
-        if(position.x + width/2 > Screen.width)
+        float width = 0;
+        float height = 0;
+        hintContent.ForceMeshUpdate();
+        if (autoSize)
         {
-            position.x = Screen.width - width/2;
-        }else if(position.x - width / 2 < 0)
+            width = hintContent.preferredWidth < maxWidth ? hintContent.preferredWidth : maxWidth;
+            height = hintContent.preferredHeight;
+        }
+        else
         {
-            position.x = width / 2;
+            width = Width;
+            height = Height;
         }
 
-        if(position.y + height/2 > Screen.height)
+        _rectTransform.sizeDelta = new Vector2(width, height);
+        Debug.Log(width.ToString() + " " + height.ToString());
+
+        //prevent it from going out of screen
+        if (screenPos.x + width > Screen.width)
         {
-            position.y = Screen.height - height/2;
-        }else if(position.y - height/2 < 0)
+            screenPos.x = Screen.width - width;
+        }else if(screenPos.x - width < 0)
         {
-            position.y = height/2;
+            screenPos.x = width;
+        }
+
+        if(screenPos.y + height > Screen.height)
+        {
+            screenPos.y = Screen.height - height;
+        }else if(screenPos.y - height < 0)
+        {
+            screenPos.y = height;
         }
         
         //set active and show content
         gameObject.SetActive(true);
-        transform.position = position;
+        transform.position = screenPos;
         hintContent.text = content;
     }
+
+    //public void ShowHintOnCanvasPos(string content, Vector2 canvasPos)
+    //{
+    //    hintContent.ForceMeshUpdate();
+    //    float width = hintContent.preferredWidth < maxWidth ? hintContent.preferredWidth : maxWidth;
+    //    float height = hintContent.preferredHeight;
+    //    _rectTransform = GetComponent<RectTransform>();
+    //    _rectTransform.sizeDelta = new Vector2(width, height);
+
+    //    //prevent it from going out of screen
+    //    if (canvasPos.x + width > Screen.width)
+    //    {
+    //        canvasPos.x = Screen.width - width;
+    //    }
+    //    else if (canvasPos.x - width < 0)
+    //    {
+    //        canvasPos.x = width;
+    //    }
+
+    //    if (canvasPos.y + height > Screen.height)
+    //    {
+    //        canvasPos.y = Screen.height - height;
+    //    }
+    //    else if (canvasPos.y - height < 0)
+    //    {
+    //        canvasPos.y = height;
+    //    }
+
+    //    //set active and show content
+    //    gameObject.SetActive(true);
+    //    transform.position = canvasPos;
+    //    hintContent.text = content;
+    //}
 
     public void HideHint()
     {

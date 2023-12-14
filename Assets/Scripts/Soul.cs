@@ -44,11 +44,15 @@ public class Soul : MonoBehaviour, IProduct
     {
         _mainCamera = Camera.main;
     }
-
-    public void Initialize()
+    private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         UpdateAppearance();
+    }
+
+    public void Initialize()
+    {
+       
     }
 
     private void Update()

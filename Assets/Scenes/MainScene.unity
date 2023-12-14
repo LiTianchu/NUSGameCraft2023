@@ -291,13 +291,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1367836688}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367836691}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &37168468 stripped
 RectTransform:
@@ -755,8 +760,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0816412cb85aa44ab8985f4f9d9153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintContent: Get Elixir Here
-  waitTime: 0.7
+  hintContent: '<b><color=#A44064>Elixia: World of Elixir</color></b><br>
+
+    A
+    world that have abundant <color=#A44064>elixir resources</color><br>
+
+    Send
+    your adventurers here to get the offerings from its people <br>
+
+    The more
+    powerful the adventurer, the more offering you will get each year'
+  waitTime: 0
 --- !u!1 &199301306 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
@@ -818,7 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -851,8 +865,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 11
-  m_fontSizeBase: 11
+  m_fontSize: 10
+  m_fontSizeBase: 10
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -887,7 +901,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 8, y: 5, z: 8, w: 5}
+  m_margin: {x: 10, y: 8, z: 10, w: 8}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1046,6 +1060,7 @@ GameObject:
   - component: {fileID: 214861501}
   - component: {fileID: 214861503}
   - component: {fileID: 214861502}
+  - component: {fileID: 214861504}
   m_Layer: 5
   m_Name: PowerLabel
   m_TagString: Untagged
@@ -1069,8 +1084,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.59999, y: -1.8500099}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -128.60402, y: 15.806}
+  m_SizeDelta: {x: 47.992, y: 14.336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214861502
 MonoBehaviour:
@@ -1169,6 +1184,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214861500}
   m_CullTransparentMesh: 1
+--- !u!114 &214861504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214861500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: '<b><color=#A44064>Power</color></b>
+
+
+    Affects the ability to
+    work or fight'
+  hintSpawnAnchor: {fileID: 0}
+  height: 70
+  width: 120
 --- !u!1 &219410893
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,13 +1787,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 988931956}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 988931959}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &274207568 stripped
 RectTransform:
@@ -2062,13 +2102,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1567117848}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1567117851}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &334089267 stripped
 RectTransform:
@@ -2220,6 +2265,7 @@ GameObject:
   - component: {fileID: 374367941}
   - component: {fileID: 374367943}
   - component: {fileID: 374367942}
+  - component: {fileID: 374367944}
   m_Layer: 5
   m_Name: HealthLabel
   m_TagString: Untagged
@@ -2243,8 +2289,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52.145367, y: -16.450012}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -128.9506, y: -1.5131892}
+  m_SizeDelta: {x: 46.3895, y: 15.749}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374367942
 MonoBehaviour:
@@ -2343,6 +2389,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 374367940}
   m_CullTransparentMesh: 1
+--- !u!114 &374367944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374367940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: '<b><color=#A44064>Health</color></b>
+
+
+    Affects the life time
+    of the entity'
+  hintSpawnAnchor: {fileID: 0}
+  height: 70
+  width: 120
 --- !u!1 &377028599
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,7 +3358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.9, y: 1.2768}
+  m_AnchoredPosition: {x: -65.9, y: -1}
   m_SizeDelta: {x: 65.6946, y: 14.723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &496562081
@@ -3544,13 +3610,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 496901024}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 496901027}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &496901021 stripped
 RectTransform:
@@ -3570,7 +3641,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Grovehewer
-  artifactDescription: Channel the forces of the natural world
+  artifactDescription: 'When adventurer deployed to <color=#A44064>Floria</color>,
+    get <color=#A44064>100% more wood</color> every year
+
+
+
+    Channel the forces
+    of the natural world'
   artifactSprite: {fileID: 94686888, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 782468752}
   rockCostDisplay: {fileID: 1186052637}
@@ -3582,6 +3659,22 @@ MonoBehaviour:
   waterCost: 300
   resourceType: 0
   multiplier: 1
+--- !u!114 &496901027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199498293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: Hi
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &497762589
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,7 +4553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.99215686, g: 0.9372549, b: 0.84705883, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4633,6 +4726,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662515161}
   - component: {fileID: 662515162}
+  - component: {fileID: 662515163}
   m_Layer: 5
   m_Name: Crystal
   m_TagString: Untagged
@@ -4675,6 +4769,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 2
   qtyField: {fileID: 734780873}
+--- !u!114 &662515163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662515160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: Crystal
+  hintSpawnAnchor: {fileID: 0}
+  height: 30
+  width: 80
 --- !u!114 &665864022 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7781131652502301804, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
@@ -4901,7 +5011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0816412cb85aa44ab8985f4f9d9153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintContent: hi
+  hintContent: Are you pointing at me?
   waitTime: 0
 --- !u!61 &684836639
 BoxCollider2D:
@@ -5716,13 +5826,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2063927424}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2063927427}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &800569695 stripped
 RectTransform:
@@ -6156,7 +6271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6766,6 +6881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 913118368}
   - component: {fileID: 913118369}
+  - component: {fileID: 913118370}
   m_Layer: 5
   m_Name: Water
   m_TagString: Untagged
@@ -6808,6 +6924,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 3
   qtyField: {fileID: 1593079456}
+--- !u!114 &913118370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913118367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: Elixir
+  hintSpawnAnchor: {fileID: 0}
+  height: 30
+  width: 80
 --- !u!1 &927011011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6818,6 +6950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927011012}
   - component: {fileID: 927011013}
+  - component: {fileID: 927011014}
   m_Layer: 5
   m_Name: Rock
   m_TagString: Untagged
@@ -6860,6 +6993,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 1
   qtyField: {fileID: 341474029}
+--- !u!114 &927011014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927011011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: Ore
+  hintSpawnAnchor: {fileID: 0}
+  height: 30
+  width: 80
 --- !u!114 &950425612 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7781131652502301804, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
@@ -7112,6 +7261,7 @@ RectTransform:
   - {fileID: 1478751468}
   - {fileID: 1417257231}
   - {fileID: 842226815}
+  - {fileID: 1132964670}
   m_Father: {fileID: 1674141408}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7721,7 +7871,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Goddess' Protection
-  artifactDescription: A symbol of benevolent grace and safeguarding power
+  artifactDescription: 'Adventurer obtain  <color=#A44064>100% more lifetime</color>
+
+
+
+    A
+    symbol of benevolent grace and safeguarding power'
   artifactSprite: {fileID: -34309091, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 1815480113}
   rockCostDisplay: {fileID: 964252921}
@@ -7732,6 +7887,22 @@ MonoBehaviour:
   crystalCost: 200
   waterCost: 200
   multiplier: 1
+--- !u!114 &988931959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988931953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &989352043
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,8 +8399,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0816412cb85aa44ab8985f4f9d9153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintContent: Get Ore Here
-  waitTime: 0.7
+  hintContent: '<color=#A44064><b>Valleria: World of Valley</b></color> <br>
+
+    A
+    world that have abundant <color=#A44064>ore resources</color> <br>
+
+    Send
+    your adventurers here to get the offerings from its people<br>
+
+    The more
+    powerful the adventurer, the more offering you will get each year'
+  waitTime: 0
 --- !u!1 &1108156937
 GameObject:
   m_ObjectHideFlags: 0
@@ -8612,6 +8792,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2896342826329345290, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
   m_PrefabInstance: {fileID: 1127455080}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1132964669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1132964670}
+  - component: {fileID: 1132964672}
+  m_Layer: 5
+  m_Name: HintAnchor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1132964670
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132964669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963040787}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 253.4, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1132964672
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132964669}
+  m_CullTransparentMesh: 1
 --- !u!114 &1139040811 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7781131652502301804, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
@@ -8735,8 +8959,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 215, y: -38}
+  m_SizeDelta: {x: 80, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1167258521
 CanvasRenderer:
@@ -8759,7 +8983,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintContent: {fileID: 204606695}
-  maxWidth: 150
+  maxWidth: 200
 --- !u!114 &1186052637 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 627079815657656962, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
@@ -9207,13 +9431,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1292754564}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1292754567}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &1292754561 stripped
 RectTransform:
@@ -9233,8 +9462,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Goddess' Keen
-  artifactDescription: A testament to the divine grace and heightened perception
-    bestowed upon its wearer
+  artifactDescription: 'Adventurer obtain  <color=#A44064>200% more lifetime</color>
+
+
+
+    A
+    testament to the divine grace and heightened perception bestowed upon its wearer'
   artifactSprite: {fileID: -785953410, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 569111145}
   rockCostDisplay: {fileID: 1955242756}
@@ -9245,6 +9478,22 @@ MonoBehaviour:
   crystalCost: 400
   waterCost: 400
   multiplier: 2
+--- !u!114 &1292754567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199301306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &1296495753
 GameObject:
   m_ObjectHideFlags: 0
@@ -9531,13 +9780,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1301064461}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1301064464}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &1301064458 stripped
 RectTransform:
@@ -9557,7 +9811,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Quarrymaster
-  artifactDescription: Unearth the treasures hidden within enchanted veins
+  artifactDescription: 'When adventurer deployed to <color=#A44064>Valleria</color>,
+    get <color=#A44064>100% more ore</color> every year
+
+
+
+    Unearth the treasures
+    hidden within enchanted veins'
   artifactSprite: {fileID: 956155994, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 1476755063}
   rockCostDisplay: {fileID: 177681989}
@@ -9569,6 +9829,22 @@ MonoBehaviour:
   waterCost: 100
   resourceType: 1
   multiplier: 1
+--- !u!114 &1301064464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643832846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &1312841619
 GameObject:
   m_ObjectHideFlags: 0
@@ -9988,8 +10264,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Infinity Flask
-  artifactDescription: A vessel that defies the conventional boundaries of space
-    and time
+  artifactDescription: 'When adventurer deployed to <color=#A44064>Elixia</color>,
+    get <color=#A44064>100% more elixir</color> every year
+
+
+
+    A vessel that defies
+    the conventional boundaries of space and time'
   artifactSprite: {fileID: 1910047319, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 1351625025}
   rockCostDisplay: {fileID: 749611430}
@@ -10001,6 +10282,22 @@ MonoBehaviour:
   waterCost: 100
   resourceType: 3
   multiplier: 1
+--- !u!114 &1367836691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367836685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &1404276988
 GameObject:
   m_ObjectHideFlags: 0
@@ -10397,8 +10694,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0816412cb85aa44ab8985f4f9d9153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintContent: Get Crystal Here
-  waitTime: 0.7
+  hintContent: '<b><color=#A44064>Crysteria: World of Crystals</color></b><br>
+
+    A
+    world that have abundant <color=#A44064>crystal resources</color><br>
+
+    Send
+    your adventurers here to get the offerings from its people <br>
+
+    The more
+    powerful the adventurer, the more offering you will get each year'
+  waitTime: 0
 --- !u!1 &1417257230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10450,7 +10756,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10790,7 +11096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.990566, g: 0.9376112, b: 0.84727657, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11127,7 +11433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Respawn In...
+  m_text: Send to ...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
   m_sharedMaterial: {fileID: -3955228353989299044, guid: d34b50651598f8f4aaad3309c93d0211, type: 2}
@@ -11233,17 +11539,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Excalibur
-  artifactDescription: A legendary weapon of unrivaled power and the embodiment of
-    kingship.
+  artifactDescription: 'When adventurer enters <color=#A44064>Enderealm</color>,
+    cut off destruction scale by 33% immediately
+
+
+    A legendary weapon of unrivaled
+    power and the embodiment of kingship.'
   artifactSprite: {fileID: -1967416664, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 1853017569}
   rockCostDisplay: {fileID: 554736566}
   crystalCostDisplay: {fileID: 236752037}
   waterCostDisplay: {fileID: 1887819400}
-  woodCost: 33
-  rockCost: 33
-  crystalCost: 33
-  waterCost: 33
+  woodCost: 3333
+  rockCost: 3333
+  crystalCost: 3333
+  waterCost: 3333
+--- !u!114 &1567117851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567117845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &1593079454
 GameObject:
   m_ObjectHideFlags: 0
@@ -11765,8 +12091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.99215686, g: 0.9372549, b: 0.84705883, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.99215686, g: 0.9372549, b: 0.84705883, a: 0.78431374}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -11802,6 +12128,7 @@ GameObject:
   - component: {fileID: 1727961092}
   - component: {fileID: 1727961094}
   - component: {fileID: 1727961096}
+  - component: {fileID: 1727961097}
   m_Layer: 0
   m_Name: BossWorld
   m_TagString: World
@@ -11935,6 +12262,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
+--- !u!114 &1727961097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727961091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0816412cb85aa44ab8985f4f9d9153e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: '<b><color=#A44064>Enderealm: World of End</color></b><br>
+
+    A
+    world under the shadow of the demon lord <br>
+
+    Send your adventurers here
+    to stop the demons <br>
+
+    The more powerful the adventurer, the more <color=#A44064>rebellion
+    force</color> the world will get'
+  waitTime: 0
 --- !u!1 &1751382503
 GameObject:
   m_ObjectHideFlags: 0
@@ -11945,6 +12295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1751382504}
   - component: {fileID: 1751382505}
+  - component: {fileID: 1751382506}
   m_Layer: 5
   m_Name: Rebellion
   m_TagString: Untagged
@@ -11987,6 +12338,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 4
   qtyField: {fileID: 525464091}
+--- !u!114 &1751382506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751382503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: Rebellion Force
+  hintSpawnAnchor: {fileID: 0}
+  height: 40
+  width: 80
 --- !u!1001 &1770037681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12139,13 +12506,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2045513538}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2045513541}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &1770037682 stripped
 RectTransform:
@@ -12317,6 +12689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1796471012}
   - component: {fileID: 1796471013}
+  - component: {fileID: 1796471014}
   m_Layer: 5
   m_Name: Wood
   m_TagString: Untagged
@@ -12359,6 +12732,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceType: 0
   qtyField: {fileID: 110052256}
+--- !u!114 &1796471014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796471011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: Wood
+  hintSpawnAnchor: {fileID: 0}
+  height: 30
+  width: 80
 --- !u!114 &1815480113 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4086569972462009138, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
@@ -12533,13 +12922,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6019814795665231403, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+    - {fileID: 269037269127173785, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1859551633}
+    - targetCorrespondingSourceObject: {fileID: 2690947646673190386, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1859551636}
   m_SourcePrefab: {fileID: 100100000, guid: 5f1d2747d626a42439c592b515ac2aa5, type: 3}
 --- !u!224 &1859551630 stripped
 RectTransform:
@@ -12559,8 +12953,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Prismshatter
-  artifactDescription: Delivers powerful, controlled blows capable of cleaving crystals
-    cleanly
+  artifactDescription: 'When adventurer deployed to <color=#A44064>Crysteria</color>,
+    get <color=#A44064>100% more crystal</color> every year
+
+
+
+    Delivers powerful,
+    controlled blows capable of cleaving crystals cleanly'
   artifactSprite: {fileID: 533105633, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 67242051}
   rockCostDisplay: {fileID: 671871656}
@@ -12572,6 +12971,22 @@ MonoBehaviour:
   waterCost: 300
   resourceType: 2
   multiplier: 1
+--- !u!114 &1859551636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673733368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &1864478527
 GameObject:
   m_ObjectHideFlags: 0
@@ -12995,7 +13410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -13896,7 +14311,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Blessed Blade
-  artifactDescription: Strikes through the most formidable battles
+  artifactDescription: 'Adventurer will bring <color=#A44064>100% more rebellion
+    force</color> in <color=#A44064>Enderealm</color>
+
+
+
+    Strikes through the
+    most formidable battles'
   artifactSprite: {fileID: -915553317, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 2131636422}
   rockCostDisplay: {fileID: 883026914}
@@ -13907,6 +14328,22 @@ MonoBehaviour:
   crystalCost: 150
   waterCost: 150
   multiplier: 1
+--- !u!114 &2045513541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045513535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &2050855806
 GameObject:
   m_ObjectHideFlags: 0
@@ -14148,7 +14585,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artifactName: Divine Judgement
-  artifactDescription: A manifestation of celestial authority and righteous retribution
+  artifactDescription: 'Adventurer will bring <color=#A44064>200% more rebellion
+    force</color> in <color=#A44064>Enderealm</color>
+
+
+
+    A manifestation of celestial
+    authority and righteous retribution'
   artifactSprite: {fileID: 294179091, guid: e269e26edebac504a92b3bcf89866c7f, type: 3}
   woodCostDisplay: {fileID: 603304924}
   rockCostDisplay: {fileID: 2140406673}
@@ -14159,6 +14602,22 @@ MonoBehaviour:
   crystalCost: 300
   waterCost: 300
   multiplier: 2
+--- !u!114 &2063927427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063927421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0470e8f991bd6d846a4516ed23b715c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintContent: 
+  hintSpawnAnchor: {fileID: 1132964670}
+  height: 150
+  width: 200
 --- !u!1 &2083813536
 GameObject:
   m_ObjectHideFlags: 0
@@ -14549,14 +15008,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0816412cb85aa44ab8985f4f9d9153e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintContent: 'Floria: world of wood <br><br>
+  hintContent: '<b><color=#A44064>Floria - World of Forest</color></b> <br>
 
-    A world that have vast amount
-    of wood resources <br><br>
+    A
+    world that have abundant <color=#A44064>wood resources </color> <br>
 
-    Send adventurers here to get the offerings from
-    the people'
-  waitTime: 0.7
+    Send
+    your adventurers here to get the offerings from its people<br>
+
+    The more
+    powerful the adventurer, the more offering you will get each year'
+  waitTime: 0
 --- !u!1 &2109717789
 GameObject:
   m_ObjectHideFlags: 0
