@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class BossWorld : World
 {
-    [SerializeField]
-    private int rebellionPerAdventurer = 100;
+    //[SerializeField]
+    //private int rebellionPerAdventurer = 100;
 
     public override void Start()
     {
@@ -28,7 +28,6 @@ public class BossWorld : World
                 }
                
             }
-            Debug.Log(rebellion);
         }
         ResourceManager.Instance.RebellionQty = rebellion;
     }
@@ -40,8 +39,8 @@ public class BossWorld : World
 
             if (artifact is Excalibur)
             {
-                Debug.Log("Excalibur");
-                GameManager.Instance.AddDestruction(artifact.UseEffect());
+                Debug.Log("Excalibur effect");
+                SimulatorManager.Instance.AddDestruction(artifact.UseEffect());
             }
         }
     }

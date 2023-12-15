@@ -23,10 +23,10 @@ public class ResourceWorld : World
     public override void Update()
     {
         base.Update();
-        if (GameManager.Instance.TimePassed > _nextResourceGeneratingTime)
+        if (SimulatorManager.Instance.TimePassed > _nextResourceGeneratingTime)
         {
             //generate resource
-            _nextResourceGeneratingTime = GameManager.Instance.TimePassed + resourceGeneratingCD;
+            _nextResourceGeneratingTime = SimulatorManager.Instance.TimePassed + resourceGeneratingCD;
             GenerateResource();
         }
 

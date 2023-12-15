@@ -152,6 +152,7 @@ public class ResourceManager : Singleton<ResourceManager>
             _rockQty = originalRock;
             _crystalQty = originalCrystal;
             _waterQty = originalWater;
+            WarningToast.Instance.ShowToast("Not enough resources!");
         }
         return allSuccess;
     }

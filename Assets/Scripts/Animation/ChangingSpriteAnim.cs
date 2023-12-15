@@ -25,9 +25,9 @@ public class ChangingSpriteAnim : MonoBehaviour
     void Update()
     {
 
-        if (GameManager.Instance.TimePassed >= _nextSpriteTime)
+        if (SimulatorManager.Instance.TimePassed >= _nextSpriteTime)
         {
-            _nextSpriteTime = GameManager.Instance.TimePassed + timeBetweenSprites;
+            _nextSpriteTime = SimulatorManager.Instance.TimePassed + timeBetweenSprites;
             _currentSpriteIndex++;
             if (_currentSpriteIndex >= sprites.Length)
             {

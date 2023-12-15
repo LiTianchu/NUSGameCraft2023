@@ -136,7 +136,6 @@ public class SoulQueue : Singleton<SoulQueue>
     {
         UpdateSoulInfo();
         //move up the curr soul to the front
-        //_currentSoul.transform.localPosition = firstSoulPos;
         _currentSoul.Destination = firstSoulPos;
         _currentSoul.transform.localScale = Vector3.one;
 
@@ -149,9 +148,7 @@ public class SoulQueue : Singleton<SoulQueue>
 
         //move the next soul to the curr soul's back
         Soul soulAfter = _souls.Peek();
-        //soulAfter.transform.localPosition = firstSoulPos + soulPositionOffset;
         soulAfter.Destination = firstSoulPos + soulPositionOffset;
-        //soulAfter.transform.localScale = _currentSoul.transform.localScale - soulScaleDifference;
     }
 
     public void AddSoul(Soul soul)
@@ -169,15 +166,11 @@ public class SoulQueue : Singleton<SoulQueue>
         
         if (_souls.Count == 1) //set display position and scale accordingly
         {
-            //soul.transform.localPosition = firstSoulPos + soulPositionOffset;
             soul.Destination = firstSoulPos + soulPositionOffset;
-            //soul.transform.localScale = Vector3.one - soulScaleDifference;
         }
         else
         {
-            //soul.transform.localPosition = firstSoulPos + soulPositionOffset * 2;
             soul.Destination = firstSoulPos + soulPositionOffset * 2;
-            //soul.transform.localScale = Vector3.one - soulScaleDifference * 2;
         }
 
         soulInQueueNumDisplay.text = _souls.Count + " More Souls Waiting";
@@ -199,7 +192,8 @@ public class SoulQueue : Singleton<SoulQueue>
     {
         if (_currentSoulPopulation >= _maxSoulPopulation)
         {
-            Debug.LogWarning("Max soul population reached");
+            //Debug.LogWarning("Max soul population reached");
+            WarningToast.Instance.ShowToast("More soul capacity is required!");
             return;
         }
 
@@ -207,10 +201,11 @@ public class SoulQueue : Singleton<SoulQueue>
         {
             CreateNewSoul((GenderType)UnityEngine.Random.Range(0, 2));
         }
-        else
-        {
-            Debug.Log("Not enough resources");
-        }
+        //else
+        //{
+        //    //Debug.Log("Not enough resources");
+        //    WarningToast.Instance.ShowToast("Not enough resources!");
+        //}
     }
 
     public void AddCapacity()

@@ -16,14 +16,14 @@ public class PauseResume : MonoBehaviour
 
     private void Pause()
     {
-        GameManager.Instance.PauseGame();
+        SimulatorManager.Instance.PauseGame();
         resume.gameObject.SetActive(true);
         pause.gameObject.SetActive(false);
     }
 
     private void Resume()
     {
-        GameManager.Instance.ResumeGame();
+        SimulatorManager.Instance.ResumeGame();
         pause.gameObject.SetActive(true);
         resume.gameObject.SetActive(false);
     }

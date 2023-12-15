@@ -13,6 +13,6 @@ public class YearTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _yearText.text = GameManager.Instance.CurrentYear.ToString();
+        _yearText.text = SimulatorManager.Instance.CurrentYear.ToString();
     }
 }

@@ -15,7 +15,7 @@ public class HoverTarget : MonoBehaviour
     private float _showHintTime;
     private void OnMouseEnter()
     {
-        _showHintTime = GameManager.Instance.TimePassed + waitTime;
+        _showHintTime = SimulatorManager.Instance.TimePassed + waitTime;
         //HoverHint.Instance.ShowHint(hintContent, Input.mousePosition);
         
     }
@@ -28,7 +28,7 @@ public class HoverTarget : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if(GameManager.Instance.TimePassed >= _showHintTime)
+        if(SimulatorManager.Instance.TimePassed >= _showHintTime)
         {
             //Debug.Log(Input.mousePosition);
             HoverHint.Instance.ShowHint(hintContent, Input.mousePosition,true);

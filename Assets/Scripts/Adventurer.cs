@@ -20,12 +20,12 @@ public class Adventurer : MonoBehaviour, IProduct
     private float _timeOfDeath;
     public void Initialize()
     {
-        _timeOfDeath = GameManager.Instance.TimePassed + _lifeTime;
+        _timeOfDeath = SimulatorManager.Instance.TimePassed + _lifeTime;
     }
 
     private void Update()
     {
-        if (GameManager.Instance.TimePassed > _timeOfDeath) //adventurer dies, it will be sent back to the pool
+        if (SimulatorManager.Instance.TimePassed > _timeOfDeath) //adventurer dies, it will be sent back to the pool
         {
             GrowAbility();
             OnAdventurerDead?.Invoke(this);

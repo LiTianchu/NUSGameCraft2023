@@ -15,14 +15,7 @@ public class HoverTargetUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [SerializeField]
     private float width;
 
-    //private void Start()
-    //{
-        
-    //    HoverHint.Instance.Width = width;
-    //    HoverHint.Instance.Height = height;
-    //    Debug.Log("Set width and height");
-        
-    //}
+    
     public void SetHintContent(string content)
     {
         hintContent = content;
@@ -43,6 +36,11 @@ public class HoverTargetUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     public void OnPointerExit(PointerEventData eventData)
+    {
+        HideHint();
+    }
+
+    public void HideHint()
     {
         HoverHint.Instance.HideHint();
     }

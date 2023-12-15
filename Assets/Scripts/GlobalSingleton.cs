@@ -1,7 +1,8 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-//This class handles logic of creating singleton object
-public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
+public class GlobalSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
 
@@ -16,18 +17,16 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                 {
                     //load singleton into instance
                     _instance = new GameObject().AddComponent<T>();
-                    Debug.Log("Loaded New Manager");
                 }
                 else
                 {
-                    Debug.Log("Loaded Old Manager");
                 }
             }
             return _instance;
         }
     }
 
-    private void Awake()
+    protected void Awake()
     {
         //if there is already a instance, destroy
         if (_instance != null)
@@ -38,11 +37,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         else
         {
             _instance = this as T;
+            DontDestroyOnLoad(this);
         }
 
 
     }
-
-
-
 }
