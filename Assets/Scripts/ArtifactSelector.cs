@@ -8,6 +8,12 @@ public class ArtifactSelector : Singleton<ArtifactSelector>
     private GameObject panel;
     [SerializeField]
     private List<ArtifactSlot> artifactSlots;
+    [SerializeField]
+    private AudioClip setArtifactSound;
+    [SerializeField]
+    private AudioClip removeArtifactSound;
+    [SerializeField]
+    private AudioClip openArtifactSelectionSound;
     // Start is called before the first frame update
 
     private ArtifactSlot _selectedSlot;
@@ -30,6 +36,14 @@ public class ArtifactSelector : Singleton<ArtifactSelector>
 
     public void SetArtifact(Artifact artifact)
     {
+        if(_selectedSlot.Artifact !=null)
+        {
+            Debug.Log("Artifact not null");
+            RemoveArtrifact();
+            SetArtifact(artifact);
+            return;
+        }
+
         if (artifact != null &&
             ResourceManager.Instance.RemoveResource(artifact.WoodCost,
                                                         artifact.RockCost,
@@ -38,6 +52,7 @@ public class ArtifactSelector : Singleton<ArtifactSelector>
         {
             _selectedSlot.Artifact = artifact;
             panel.SetActive(false);
+            AudioManager.Instance.PlaySFX(setArtifactSound);
         }
         
     }
@@ -53,6 +68,7 @@ public class ArtifactSelector : Singleton<ArtifactSelector>
         }
         _selectedSlot.Artifact = null;
         panel.SetActive(false);
+        AudioManager.Instance.PlaySFX(removeArtifactSound);
     }
 
     public void ClearAllSlots()

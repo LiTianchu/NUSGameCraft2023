@@ -28,13 +28,16 @@ public class DestructionGauge : MonoBehaviour
         //let gameobject shake when destruction gauge is close to 100%
         if (SimulatorManager.Instance.DestructionGauge >= shakeThreshold)
         {
+            
             shakeAnim.enabled = true;
             
-            float additionalShakeAmount = SimulatorManager.Instance.DestructionGauge <=99 ? (1 / (100 - SimulatorManager.Instance.DestructionGauge)) : 1;
-            shakeAnim.AdditionalShakeAmount = additionalShakeAmount;
+            float severityCoeff = SimulatorManager.Instance.DestructionGauge <=99 ? (1 / (100 - SimulatorManager.Instance.DestructionGauge)) : 1;
+            AudioManager.Instance.SetBGMPlayRate(1f + severityCoeff);
+            shakeAnim.AdditionalShakeAmount = severityCoeff;
         }
         else
         {
+            AudioManager.Instance.SetBGMPlayRate(1f);
             shakeAnim.enabled = false;
         }
     }

@@ -8,8 +8,6 @@ using UnityEngine.UI;
 
 public class SoulQueue : Singleton<SoulQueue>
 {
-    //[SerializeField]
-    //private Soul soulPrefab;
     [SerializeField]
     private Vector2 firstSoulPos;
     [SerializeField]
@@ -42,6 +40,12 @@ public class SoulQueue : Singleton<SoulQueue>
     private Sprite maleSymbol;
     [SerializeField]
     private Sprite femaleSymbol;
+    [SerializeField]
+    private AudioClip soulSendAwaySound;
+    [SerializeField]
+    private AudioClip soulCameBackSound;
+    [SerializeField]
+    private AudioClip addCapacitySound;
     
 
     private Queue<Soul> _souls;
@@ -83,7 +87,7 @@ public class SoulQueue : Singleton<SoulQueue>
         //set current soul as the first soul in the queue
         if(_souls.Count == 0)
         {
-            Debug.LogWarning("No more souls in queue"); 
+            //WarningToast.Instance.ShowToast("No more souls to send!");
             return;
         }
         _currentSoul = _souls.Dequeue();
@@ -199,23 +203,28 @@ public class SoulQueue : Singleton<SoulQueue>
 
         if (ResourceManager.Instance.RemoveResource(0,0,SOUL_COST,SOUL_COST))
         {
+            AudioManager.Instance.PlaySFX(soulCameBackSound);
             CreateNewSoul((GenderType)UnityEngine.Random.Range(0, 2));
         }
-        //else
-        //{
-        //    //Debug.Log("Not enough resources");
-        //    WarningToast.Instance.ShowToast("Not enough resources!");
-        //}
+        
     }
 
     public void AddCapacity()
     {
+        if (_maxSoulPopulation >= 50)
+        {
+            WarningToast.Instance.ShowToast("Max soul capacity reached!");
+            return;
+        }
+
         if (ResourceManager.Instance.RemoveResource(addCapacityBtn.WoodCost,addCapacityBtn.RockCost,0,0))
         {
             _maxSoulPopulation += 5;
             addCapacityBtn.AddWoodCost();
             addCapacityBtn.AddStoneCost();
             soulPopulationDisplay.text = _currentSoulPopulation + "/" + _maxSoulPopulation;
+
+            AudioManager.Instance.PlaySFX(addCapacitySound);
         }
     }
 
@@ -247,6 +256,7 @@ public class SoulQueue : Singleton<SoulQueue>
             ClearSoulInfo();
         }
 
+        AudioManager.Instance.PlaySFX(soulSendAwaySound);
         NextSoul();
 
     }
@@ -259,6 +269,7 @@ public class SoulQueue : Singleton<SoulQueue>
         soul.gameObject.SetActive(true); 
 
         AddSoul(soul); //add soul back to queue
+        AudioManager.Instance.PlaySFX(soulCameBackSound);
         adventurer.OnAdventurerDead -= HandleAdventurerDead;
     }
 }

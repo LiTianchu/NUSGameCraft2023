@@ -4,12 +4,20 @@ using UnityEngine.SceneManagement;
 public class SimulatorManager : Singleton<SimulatorManager>
 {
     [SerializeField]
-    private CanvasGroup _winPanel;
+    private CanvasGroup winPanel;
     [SerializeField]
-    private CanvasGroup _losePanel;
+    private CanvasGroup losePanel;
+    [SerializeField]
+    private CanvasGroup optionsPanel;
+    [SerializeField]
+    private CanvasGroup helpPanel;
 
     [SerializeField]
-    private CanvasGroup _optionsPanel;
+    private AudioClip simulatorBGM;
+    [SerializeField]
+    private AudioClip winBGM;
+    [SerializeField]
+    private AudioClip loseBGM;
 
     private static readonly int YEAR_STEP = 1;
     private static readonly float YEAR_ADVANCE_RATE = 1f;
@@ -23,7 +31,7 @@ public class SimulatorManager : Singleton<SimulatorManager>
     private bool _isGameOver = false;
     private bool _isGamePaused = false;
     private int _currentYear = 2023;
-    private float _destructionGauge = 0;
+    private float _destructionGauge = 10;
 
     private float _timePassed = 0f;
     private float _nextYearTime = 0f;
@@ -40,16 +48,21 @@ public class SimulatorManager : Singleton<SimulatorManager>
     {
         //Time.timeScale = 10;
         //GameManager.Instance.Difficulty = 2;
+        ToggleHelp();
+        AudioManager.Instance.SetBGMPlayRate(1);
+        AudioManager.Instance.PlayBGM(simulatorBGM);
         Debug.Log("Difficulty: " + GameManager.Instance.Difficulty);
         _destructionAccelerationStep = _destructionAccelerationStep + _destructionAccelerationStep * ((float)GameManager.Instance.Difficulty/8);
         Debug.Log("Dest Acce Step: " + _destructionAccelerationStep);
         _destructionAccelerationRate = _destructionAccelerationRate * (1- (float)GameManager.Instance.Difficulty/8);
         Debug.Log("Dest Acce Rate: " + _destructionAccelerationRate);
+
+        _destructionGauge = GameManager.Instance.Difficulty*_destructionGauge + _destructionGauge;
     }
     // Update is called once per frame
     void Update()
     {
-        _timePassed += _isGamePaused ? 0 : Time.deltaTime;
+        _timePassed += _isGamePaused || IsPanelOpen() ? 0 : Time.deltaTime;
 
         if (_timePassed >= _nextYearTime && !_isGameOver)
         {
@@ -110,16 +123,20 @@ public class SimulatorManager : Singleton<SimulatorManager>
     {
         _isGameOver = true;
         _isGamePaused = true;
-        _losePanel.gameObject.SetActive(true);
-        UIManager.Instance.WidgetFadeIn(_losePanel, 0.5f, new Vector2(0, 0), new Vector2(0, 0));
+        losePanel.gameObject.SetActive(true);
+        AudioManager.Instance.SetBGMPlayRate(1f);
+        AudioManager.Instance.PlayBGM(loseBGM);
+        UIManager.Instance.WidgetFadeIn(losePanel, 0.5f, new Vector2(0, 0), new Vector2(0, 0));
         Debug.Log("GameOver");
     }
 
     public void WinGame()
     {
         _isGamePaused = true;
-        _winPanel.gameObject.SetActive(true);
-        UIManager.Instance.WidgetFadeIn(_winPanel, 0.5f, new Vector2(0, 0), new Vector2(0, 0));
+        winPanel.gameObject.SetActive(true);
+        AudioManager.Instance.SetBGMPlayRate(1f);
+        AudioManager.Instance.PlayBGM(winBGM);
+        UIManager.Instance.WidgetFadeIn(winPanel, 0.5f, new Vector2(0, 0), new Vector2(0, 0));
         Debug.Log("WinGame");
     }
 
@@ -155,16 +172,31 @@ public class SimulatorManager : Singleton<SimulatorManager>
 
     public void ToggleOptions()
     {
-        if (_optionsPanel.gameObject.activeSelf)
+        if (optionsPanel.gameObject.activeSelf)
         {
-            _optionsPanel.gameObject.SetActive(false);
-            //_isGamePaused = false;
+            optionsPanel.gameObject.SetActive(false);
         }
         else
         {
-            _optionsPanel.gameObject.SetActive(true);
-            //_isGamePaused = true;
+            optionsPanel.gameObject.SetActive(true);
         }
+    }
+
+    public void ToggleHelp()
+    {
+        if (helpPanel.gameObject.activeSelf)
+        {
+            helpPanel.gameObject.SetActive(false);
+        }
+        else
+        {
+            helpPanel.gameObject.SetActive(true);
+        }
+    }
+
+    private bool IsPanelOpen()
+    {
+        return optionsPanel.gameObject.activeSelf || helpPanel.gameObject.activeSelf;
     }
 
 }

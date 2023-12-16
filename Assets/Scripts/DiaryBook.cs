@@ -20,6 +20,8 @@ public class DiaryBook : MonoBehaviour
     private CanvasGroup options;
     [SerializeField]
     private CanvasGroup footer;
+    [SerializeField]
+    private AudioClip diaryBGM;
 
     private int _currentSentenceIndex = 0;
     //private int _currentSentenceCharIndex;
@@ -27,7 +29,8 @@ public class DiaryBook : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        AudioManager.Instance.SetBGMPlayRate(1);
+        AudioManager.Instance.PlayBGM(diaryBGM);
     }
 
     // Update is called once per frame
