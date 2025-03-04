@@ -12,15 +12,15 @@ public class GlobalSingleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if (_instance == null)
             {
-                _instance = FindObjectOfType<T>();
+                _instance = FindFirstObjectByType<T>();
                 if (_instance == null)
                 {
                     //load singleton into instance
                     _instance = new GameObject().AddComponent<T>();
+                    _instance.gameObject.name = typeof(T).ToString();
+                    Debug.Log("Loaded New Manage: " + _instance.gameObject.name);
                 }
-                else
-                {
-                }
+            
             }
             return _instance;
         }
